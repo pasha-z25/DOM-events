@@ -26,7 +26,6 @@ a, a:hover {
     text-decoration: none;
 }
 .container {
-    position: relative;
     width: 100%;
     max-width: 100%;
     padding-left: 1rem;
@@ -43,12 +42,18 @@ a, a:hover {
 .justify-between {
     justify-content: space-between;
 }
+.transition {
+    transition: all 0.2s linear;
+}
+.relative {
+    position: relative;
+}
 /*--------- HEADER STYLES -------------------------------------------------------------------*/
 .header {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-.logo_wrap {
+.logo_wrapper {
     max-width: 150px;
 }
 .burger {
@@ -67,7 +72,6 @@ a, a:hover {
     height: 2px;
     left: 4px;
     background-color: var(--main-color);
-    transition: all 0.2s linear;
     opacity: 1;
 }
 .burger span:first-child {
@@ -104,6 +108,11 @@ a, a:hover {
 .burger.open + .menu {
     display: flex;
 }
+.menu_item {
+    padding: 0.5rem 0;
+    margin: 0 1rem;
+    text-align: right;
+}
 /*--------- MEDIA STYLES --------------------------------------------------------------------*/
 
 @media screen and (min-width: 425px) {
@@ -114,6 +123,31 @@ a, a:hover {
 @media screen and (min-width: 992px) {
     .container {
         max-width: 80%;
+    }
+    .burger {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+    }
+    .menu_item::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: var(--main-color);
+        transition: all 0.2s linear;
+    }
+    .menu_item:hover {
+        color: var(--main-color);
+    }
+    .menu_item:hover::after {
+        width: 100%;
     }
 }
 @media screen and (min-width: 2100px) {
