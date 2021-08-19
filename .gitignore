@@ -1,0 +1,11 @@
+# Logs
+/logs
+*.log
+npm-debug.log*
+
+# Mac files
+.DS_Store
+
+# IDE and editors
+.idea
+.vscode
