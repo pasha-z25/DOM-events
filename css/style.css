@@ -96,6 +96,13 @@ a, a:hover {
 }
 .menu {
     display: none;
+    position: absolute;
+    right: 0;
+    top: 75px;
+    flex-direction: column;
+}
+.burger.open + .menu {
+    display: flex;
 }
 /*--------- MEDIA STYLES --------------------------------------------------------------------*/
 
